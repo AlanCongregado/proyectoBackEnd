@@ -1,0 +1,29 @@
+[
+  {
+    "title": "JBL flip 6",
+    "description": "parlante portatil",
+    "price": 58500,
+    "thumbnail": "sin imagen",
+    "code": "JBL123",
+    "stock": 30,
+    "id": 1
+  },
+  {
+    "title": "JBL 510T",
+    "description": "Auriculares JBL",
+    "price": 13000,
+    "thumbnail": "Sin imagen2",
+    "code": "JBL321",
+    "stock": 25,
+    "id": 2
+  },
+  {
+    "title": "Notebook HP",
+    "description": "11th Gen Intel(R) Core(TM) i3-1115G4 @ 3.00GHz   2.90 GHz",
+    "price": 150000,
+    "thumbnail": "Sin imagen3",
+    "code": "nhp111",
+    "stock": 18,
+    "id": 3
+  }
+]

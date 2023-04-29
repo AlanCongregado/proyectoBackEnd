@@ -1,10 +1,10 @@
 // Importamos file system
 import { promises as fs } from "fs";
 // Creamos la Class Product Manager
-class ProductManager {
+export default class ProductManager {
   constructor() {
     // En el constructor creamos el path que va a ser la ruta
-    this.path = "./productos.txt";
+    this.path = "./productos.json";
     // products va a ser el array de productos donde vamos a pushear los productos
     this.products = [];
   }
@@ -28,7 +28,7 @@ class ProductManager {
 
   getProduct = async () => {
     let product = await this.readProducts();
-    return console.log(product);
+    return product;
   };
 
   readProducts = async () => {
@@ -63,5 +63,31 @@ class ProductManager {
   };
 }
 const productos = new ProductManager();
+/* 
+productos.addProduct(
+  "JBL flip 6",
+  "parlante portatil",
+  58500,
+  "sin imagen",
+  "JBL123",
+  30
+);
+productos.addProduct(
+  "JBL 510T",
+  "Auriculares JBL",
+  13000,
+  "Sin imagen2",
+  "JBL321",
+  25
+);
 
-productos.addProduct("");
+productos.addProduct(
+  "Notebook HP",
+  "11th Gen Intel(R) Core(TM) i3-1115G4 @ 3.00GHz   2.90 GHz",
+  150000,
+  "Sin imagen3",
+  "nhp111",
+  18
+); */
+
+//productos.getProduct();
