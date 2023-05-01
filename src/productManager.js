@@ -21,7 +21,7 @@ export default class ProductManager {
       id: ProductManager.id,
     };
 
-    this.products.push(product);
+    await this.products.push(product);
 
     await fs.writeFile(this.path, JSON.stringify(this.products));
   };
@@ -38,11 +38,13 @@ export default class ProductManager {
 
   getProductById = async (id) => {
     let productById = await this.readProducts();
-    let filter = productById.find((product) => product.id === id);
+    let filter = await productById.find((product) => {
+      return product.id === id;
+    });
     if (!filter) {
       console.log("Producto no encontrado");
     } else {
-      console.log(filter);
+      return filter;
     }
   };
 
@@ -63,8 +65,8 @@ export default class ProductManager {
   };
 }
 const productos = new ProductManager();
-/* 
-productos.addProduct(
+
+/* productos.addProduct(
   "JBL flip 6",
   "parlante portatil",
   58500,
@@ -88,6 +90,63 @@ productos.addProduct(
   "Sin imagen3",
   "nhp111",
   18
-); */
+);
 
+productos.addProduct(
+  "JBL Charge 5",
+  "Parlante portatil",
+  78900,
+  "Sin imagen 3",
+  "JBL345",
+  38
+);
+productos.addProduct(
+  "JBL Charge 4",
+  "Parlante portatil",
+  68900,
+  "Sin imagen 5",
+  "JBL765",
+  28
+);
+productos.addProduct(
+  "Iphone 14 pro max",
+  "Apple",
+  420000,
+  "Sin imagen 6",
+  "MAC142",
+  12
+);
+productos.addProduct(
+  "Samsung S22",
+  "Celular Samsung",
+  32500,
+  "Sin imagen 7",
+  "SAM123",
+  20
+);
+productos.addProduct(
+  "Samsung S21",
+  "Celular Samsung",
+  300000,
+  "Sin imagen 7",
+  "SAM456",
+  18
+);
+productos.addProduct(
+  "Iphone 13 plus",
+  "Apple",
+  392000,
+  "Sin imagen 8",
+  "MAC132",
+  22
+);
+productos.addProduct(
+  "Monitor Samsung",
+  "Monitor 24 pulgadas",
+  68000,
+  "Sin imagen 9",
+  "SAM853",
+  20
+);
+ */
 //productos.getProduct();
